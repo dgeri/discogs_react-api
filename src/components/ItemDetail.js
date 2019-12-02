@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Arr from "./Arr";
+import Tracks from "./Tracks";
 import { Link } from "react-router-dom";
+import { isTSEnumMember } from "@babel/types";
 function ItemDetail({ match }) {
   useEffect(() => {
     fetchItem();
@@ -14,24 +16,42 @@ function ItemDetail({ match }) {
       `https://api.discogs.com/releases/${match.params.id}`
     );
     const item = await fetchItem.json();
-    console.log(item);
+    
     setItem(item);
+    console.log(item);
+if(!item.title){
+alert('RELEASE NOT FOUND')
+}
+   
   };
+
+ 
+
   return (
     <div className="item-detail">
-      <h1>{item.artists_sort}</h1>
-      <h2>{item.title}</h2>
-      <p className="genre">{item.genres}</p>
-      <Arr styles={item.styles} />
-      <p className="year">{item.year}</p>
-      <p className="country">{item.country}</p>
+      <div className='wrapper'>
+      <div className='main-block'>
+        <h1>{item.artists_sort} - {item.title}</h1>
+        <div className='description'> 
+          <p className="genre">{item.genres}</p>
+          <Arr styles={item.styles} />
+        </div>
+        <Tracks tracklist={item.tracklist} />
+        <p className="year">{item.year}</p>
+        <p className="country">{item.country}</p>
+      </div>
+      <div className='second-block'> 
       <p className="notes">{item.notes}</p>
+      </div>
+      </div>
       <Link to={`/search/`}>
         {" "}
         <button className="button-back">BACK</button>
       </Link>
     </div>
+    
   );
 }
 
 export default ItemDetail;
+
