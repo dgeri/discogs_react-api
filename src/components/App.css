@@ -1,0 +1,101 @@
+
+.main-nav{
+    list-style: none;
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    font-size: 26px;
+    padding: 50px;
+}
+.main-nav li{
+    padding: 0;
+    text-decoration: none;
+   color: black;
+}
+.About,
+.Search,
+.item-detail{
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.about-text{
+    width: 500px;
+    font-size: 22px;
+}
+input{
+    width: 680px;
+    height: 30px;
+    margin-right: 10px;
+}
+input::placeholder{
+    font-size: 24px;
+    padding: 5px;
+}
+input[type="text"] {
+    font-size:25px;
+}
+.button-search{
+    border: none;
+    background: none;
+    background-image: url('../img/search.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.style-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: darkcyan;
+    font-size: 14px;
+    display: flex;
+}
+.style-list li{
+    margin-right: 10px;
+}
+form{
+    display: flex;
+    align-content: baseline;
+}
+.search-item{
+font-size: 20px;
+line-height: 26px;
+}
+.back-button{
+ width: 50px;
+ height: 30px;
+ padding: 0;
+ margin: 0;
+ border: 1px solid #2C0E22;
+ font-size: 16px;
+ font-weight: solid;
+}
+.genre{
+    color: blueviolet;
+}
+
+.notes{
+    width: 500px;
+    line-height: 26px;
+}
+.year{
+    font-weight: bold;
+}
+.country{
+    font-style: italic;
+}
+.button-back{
+    background: none;
+    color: black;
+    font-weight:bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.search-links{
+    text-decoration: none;
+}
+.search-links:visited{
+    color: #6E747A;
+}
