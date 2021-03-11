@@ -22,7 +22,7 @@ function Search() {
         searchResults.push(elem);
       }
     });
-    console.log(searchResults)
+    // console.log(searchResults)
     setItems(searchResults);
   };
 

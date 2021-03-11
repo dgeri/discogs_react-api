@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Arr from "./Arr";
 import Tracks from "./Tracks";
+import Videos from "./Videos";
 import { Link } from "react-router-dom";
 function ItemDetail({ match }) {
   useEffect(() => {
@@ -35,12 +36,12 @@ function ItemDetail({ match }) {
             <Arr styles={item.styles} />
           </div>
           <Tracks tracklist={item.tracklist} />
-          
           <p className="year">{item.year}</p>
           <p className="country">{item.country}</p>
         </div>
         <div className="second-block">
           <p className="notes">{item.notes}</p>
+          <Videos videos={item.videos}></Videos>
         </div>
       </div>
       <Link to={`/search/`}>
