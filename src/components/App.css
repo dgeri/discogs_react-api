@@ -59,6 +59,14 @@ input[type="text"] {
     list-style: decimal-leading-zero;
     font-size: 24px;
 }
+.tracks-wrapper{
+    display: flex;
+    align-items: center;
+}
+.tracks-title,
+.tracks-wrapper span{
+    margin-right: 20px;
+}
 form{
     display: flex;
     align-content: baseline;

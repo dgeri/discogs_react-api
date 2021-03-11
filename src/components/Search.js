@@ -16,11 +16,13 @@ function Search() {
       `https://api.discogs.com/database/search?q=+${artist}&type=releases&key=MiXYmphrxbtTHSxwQtJi&secret=BZhDrPYdzbvEylDLQvxJsHtRGNwRztqO`
     );
     const items = await data.json();
+
     items.results.map((elem) => {
       if (elem.type == "release") {
         searchResults.push(elem);
       }
     });
+    console.log(searchResults)
     setItems(searchResults);
   };
 

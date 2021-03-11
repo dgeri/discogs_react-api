@@ -17,7 +17,7 @@ function ItemDetail({ match }) {
     const item = await fetchItem.json();
 
     setItem(item);
-    // console.log(item);
+    console.log(item);
     if (!item.title) {
       alert("RELEASE NOT FOUND");
     }
@@ -35,6 +35,7 @@ function ItemDetail({ match }) {
             <Arr styles={item.styles} />
           </div>
           <Tracks tracklist={item.tracklist} />
+          
           <p className="year">{item.year}</p>
           <p className="country">{item.country}</p>
         </div>
