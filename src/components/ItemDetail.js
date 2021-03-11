@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function ItemDetail({ match }) {
   useEffect(() => {
     fetchItem();
-    console.log(match);
+    // console.log(match);
   }, []);
 
   const [item, setItem] = useState({});
@@ -15,42 +15,39 @@ function ItemDetail({ match }) {
       `https://api.discogs.com/releases/${match.params.id}`
     );
     const item = await fetchItem.json();
-    
-    setItem(item);
-    console.log(item);
-if(!item.title){
-alert('RELEASE NOT FOUND')
-}
-   
-  };
 
- 
+    setItem(item);
+    // console.log(item);
+    if (!item.title) {
+      alert("RELEASE NOT FOUND");
+    }
+  };
 
   return (
     <div className="item-detail">
-      <div className='wrapper'>
-      <div className='main-block'>
-        <h1>{item.artists_sort} - {item.title}</h1>
-        <div className='description'> 
-          <p className="genre">{item.genres}</p>
-          <Arr styles={item.styles} />
+      <div className="wrapper">
+        <div className="main-block">
+          <h1>
+            {item.artists_sort} - {item.title}
+          </h1>
+          <div className="description">
+            <p className="genre">{item.genres}</p>
+            <Arr styles={item.styles} />
+          </div>
+          <Tracks tracklist={item.tracklist} />
+          <p className="year">{item.year}</p>
+          <p className="country">{item.country}</p>
         </div>
-        <Tracks tracklist={item.tracklist} />
-        <p className="year">{item.year}</p>
-        <p className="country">{item.country}</p>
-      </div>
-      <div className='second-block'> 
-      <p className="notes">{item.notes}</p>
-      </div>
+        <div className="second-block">
+          <p className="notes">{item.notes}</p>
+        </div>
       </div>
       <Link to={`/search/`}>
         {" "}
         <button className="button-back">BACK</button>
       </Link>
     </div>
-    
   );
 }
 
 export default ItemDetail;
-

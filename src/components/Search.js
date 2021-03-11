@@ -12,10 +12,10 @@ function Search() {
     e.preventDefault();
     const artist = e.target.elements.artist.value;
     const data = await fetch(
-      `https://api.discogs.com/database/search?q=${artist}&?type=releases&key=MiXYmphrxbtTHSxwQtJi&secret=BZhDrPYdzbvEylDLQvxJsHtRGNwRztqO`
+      `https://api.discogs.com/database/search?q=+${artist}&type=releases&key=MiXYmphrxbtTHSxwQtJi&secret=BZhDrPYdzbvEylDLQvxJsHtRGNwRztqO`
     );
     const items = await data.json();
-    console.log(items.results);
+    // console.log(items.results);
     setItems(items.results);
   };
 
