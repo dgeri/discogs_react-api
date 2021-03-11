@@ -8,13 +8,14 @@ export default function Videos({ videos }) {
           videos.map((v) => {
             var wrongLink = "watch?v=";
             var rightLink = "embed/";
-            // console.log(v.uri.replace(wrongLink, rightLink))
-            return (
-              <iframe
-                width="300"
-                src={v.uri.replace(wrongLink, rightLink)}
-              ></iframe>
-            );
+            if (videos) {
+              return (
+                <iframe
+                  width="300"
+                  src={v.uri.replace(wrongLink, rightLink)}
+                ></iframe>
+              );
+            }
           })}
       </div>
     </div>
