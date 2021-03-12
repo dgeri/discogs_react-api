@@ -28,9 +28,13 @@ function ItemDetail({ match }) {
     <div className="item-detail">
       <div className="wrapper">
         <div className="main-block">
-          <h1>
-            {item.artists_sort} - {item.title}
-          </h1>
+          <div className="title-wrapper">
+            <h1>
+              {item.artists_sort} - {item.title}
+            </h1>
+            <div className='btn-favorites'>☆</div>
+          </div>
+
           <div className="description">
             <p className="genre">{item.genres}</p>
             <Arr styles={item.styles} />

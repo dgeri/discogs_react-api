@@ -127,6 +127,18 @@ form {
   padding-top: 140px;
   padding-right: 50px;
 }
+.btn-favorites {
+  font-size: 34px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+.title-wrapper {
+  display: flex;
+  align-items: center;
+}
+.title-wrapper h1{
+  margin-right: 20px;
+}
 .notes {
   margin-bottom: 30px;
 }

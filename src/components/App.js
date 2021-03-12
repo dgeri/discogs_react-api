@@ -5,6 +5,7 @@ import About from './About';
 import Search from './Search';
 import {BrowserRouter as Router, Switch, Route} from  'react-router-dom';
 import ItemDetail from './ItemDetail';
+import Favorites from './Favorites';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route exact path="/search" component={Search}/>
+            <Route path="/favorites" component={Favorites}/>
             <Route path="/search/:id"  component={ItemDetail}/>
         </Switch>
       </div>
