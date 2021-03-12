@@ -9,7 +9,7 @@ export default function Videos({ videos }) {
           var rightLink = "embed/";
           if (videos) {
             return (
-              <iframe
+              <iframe key={v.uri.toString()}
                 src={v.uri.replace(wrongLink, rightLink)}
               ></iframe>
             );

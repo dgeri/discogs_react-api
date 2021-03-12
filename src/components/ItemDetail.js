@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Arr from "./Arr";
+import Genres from "./Genres";
 import Tracks from "./Tracks";
 import Videos from "./Videos";
 import { Link } from "react-router-dom";
@@ -18,26 +18,25 @@ function ItemDetail({ match }) {
     const item = await fetchItem.json();
 
     setItem(item);
-    console.log(item);
+    // console.log(item);
     if (!item.title) {
       alert("RELEASE NOT FOUND");
     }
   };
 
   return (
-    <div className="item-detail">
+    <div className="track-detail">
       <div className="wrapper">
         <div className="main-block">
           <div className="title-wrapper">
             <h1>
               {item.artists_sort} - {item.title}
             </h1>
-            <div className='btn-favorites'>☆</div>
+            <div className="btn-favorites">☆</div>
           </div>
-
           <div className="description">
-            <p className="genre">{item.genres}</p>
-            <Arr styles={item.styles} />
+            <p className="main-genre">{item.genres}</p>
+            <Genres genres={item.styles} />
           </div>
           <Tracks tracklist={item.tracklist} />
           <p className="year">{item.year}</p>
@@ -45,7 +44,7 @@ function ItemDetail({ match }) {
         </div>
         <div className="second-block">
           <p className="notes">{item.notes}</p>
-          <Videos videos={item.videos}></Videos>
+          <Videos videos={item.videos} />
         </div>
       </div>
       <Link to={`/search/`}>

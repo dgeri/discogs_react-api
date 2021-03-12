@@ -8,14 +8,14 @@ export default function Tracks({ tracklist }) {
           tracklist.map((el) => {
             if (el.artists) {
               return (
-                <li className="tracks-wrapper">
+                <li key={el.title.toString()} className="tracks-wrapper-ext">
                   <p className="tracks-title">{el.artists[0].name}</p>
                   <span>-</span>
                   <p>{el.title}</p>
                 </li>
               );
             } else {
-              return <li>{el.title}</li>;
+              return <li  key={el.position.toString()} className="tracks-wrapper">{el.title}</li>;
             }
           })}
       </ul>

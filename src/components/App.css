@@ -1,7 +1,7 @@
 .main-nav {
   list-style: none;
   display: flex;
-  width: 500px;
+  width: 200px;
   justify-content: space-between;
   font-size: 26px;
   padding: 50px;
@@ -13,7 +13,7 @@
 }
 .About,
 .Search,
-.item-detail {
+.track-detail {
   padding: 50px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -58,12 +58,20 @@ input[type="text"] {
   list-style: decimal-leading-zero;
   font-size: 24px;
 }
-.tracks-wrapper {
+.tracks-wrapper-ext {
   display: flex;
   align-items: center;
 }
-.tracks-title,
-.tracks-wrapper span {
+
+.tracks-wrapper-ext p {
+  margin: 0;
+}
+.tracks-wrapper-ext {
+  margin-left: -40px;
+}
+p.tracks-title,
+.tracks-wrapper span,
+.tracks-wrapper-ext span {
   margin-right: 20px;
 }
 form {
@@ -83,15 +91,14 @@ form {
   font-size: 16px;
   font-weight: solid;
 }
-.genre {
+.main-genre {
   color: blueviolet;
   padding-right: 10px;
 }
-
-/* .notes{
-    width: 500px;
-    line-height: 26px;
-} */
+/* to be done */
+.favorites {
+  display: none;
+}
 .year {
   font-weight: bold;
 }
@@ -125,18 +132,18 @@ form {
 .second-block {
   width: 30%;
   padding-top: 140px;
-  padding-right: 50px;
 }
 .btn-favorites {
   font-size: 34px;
   margin-top: -10px;
   cursor: pointer;
+  display: none;
 }
 .title-wrapper {
   display: flex;
   align-items: center;
 }
-.title-wrapper h1{
+.title-wrapper h1 {
   margin-right: 20px;
 }
 .notes {

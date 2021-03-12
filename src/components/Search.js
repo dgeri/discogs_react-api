@@ -20,9 +20,9 @@ function Search() {
     items.results.map((elem) => {
       if (elem.type == "release") {
         searchResults.push(elem);
+        searchResults.sort((a, b) => (a.year > b.year ? 1 : -1));
       }
     });
-    // console.log(searchResults)
     setItems(searchResults);
   };
 
@@ -36,7 +36,7 @@ function Search() {
       {items.map((item) => (
         <h1 className="search-item" key={item.id}>
           <Link className="search-links" to={`/search/${item.id}`}>
-            {item.title}
+            {item.title} ({item.year})
           </Link>
         </h1>
       ))}
