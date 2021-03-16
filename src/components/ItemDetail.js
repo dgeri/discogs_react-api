@@ -41,16 +41,16 @@ function ItemDetail({ match }) {
           <Tracks tracklist={item.tracklist} />
           <p className="year">{item.year}</p>
           <p className="country">{item.country}</p>
+          <Link to={`/search/`}>
+            {" "}
+            <button className="button-back">BACK</button>
+          </Link>
         </div>
         <div className="second-block">
           <p className="notes">{item.notes}</p>
           <Videos videos={item.videos} />
         </div>
       </div>
-      <Link to={`/search/`}>
-        {" "}
-        <button className="button-back">BACK</button>
-      </Link>
     </div>
   );
 }

@@ -1,21 +1,66 @@
+html,
+body,
+body div,
+span,
+iframe,
+p,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("../fonts/HelveticaRegular/HelveticaRegular.eot");
+  src: url("../fonts/HelveticaRegular/HelveticaRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+    url("../fonts/HelveticaRegular/HelveticaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+body,
+#root {
+  height: 100%;
+  font-family: HelveticaRegular, sans-serif;
+}
+nav {
+  background-color: #000;
+  height: 100px;
+}
 .main-nav {
   list-style: none;
   display: flex;
   width: 200px;
   justify-content: space-between;
   font-size: 26px;
-  padding: 50px;
+  padding: 30px 50px;
+  margin: 0;
 }
-.main-nav li {
+.main-nav li,
+.main-nav a {
   padding: 0;
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
+.main-nav li:hover {
+  opacity: 0.5;
+}
+.error-msg {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
 .About,
 .Search,
 .track-detail {
   padding: 50px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 .about-text {
   width: 500px;
@@ -47,7 +92,7 @@ input[type="text"] {
   list-style: none;
   padding: 0;
   margin: 0;
-  color: darkcyan;
+  color: rgb(91, 94, 94);
   font-size: 14px;
   display: flex;
 }
@@ -82,25 +127,12 @@ form {
   font-size: 20px;
   line-height: 26px;
 }
-.back-button {
-  width: 50px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #2c0e22;
-  font-size: 16px;
-  font-weight: solid;
-}
 .main-genre {
-  color: blueviolet;
   padding-right: 10px;
-}
-/* to be done */
-.favorites {
-  display: none;
 }
 .year {
   font-weight: bold;
+  margin-bottom: 20px;
 }
 .country {
   font-style: italic;
@@ -111,12 +143,15 @@ form {
   font-weight: bold;
   font-size: 20px;
   margin-top: 20px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 .search-links {
   text-decoration: none;
+  color: #000;
 }
 .search-links:visited {
-  color: #6e747a;
+  color: #0026ff;
 }
 .description {
   display: flex;
@@ -125,13 +160,15 @@ form {
 .wrapper {
   display: flex;
 }
-
 .main-block {
   width: 70%;
 }
 .second-block {
   width: 30%;
-  padding-top: 140px;
+}
+/* to be done */
+.favorites {
+  display: none;
 }
 .btn-favorites {
   font-size: 34px;
@@ -144,6 +181,7 @@ form {
   align-items: center;
 }
 .title-wrapper h1 {
+  margin-top: 0;
   margin-right: 20px;
 }
 .notes {
@@ -167,10 +205,48 @@ iframe {
   margin-bottom: 20px;
 }
 @media screen and (max-width: 780px) {
+  nav {
+    height: 60px;
+  }
+  .main-nav {
+    padding: 16px 20px;
+    width: auto;
+  }
+  .About,
+  .Search,
+  .track-detail {
+    padding: 20px;
+  }
+  .main-block {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .second-block {
+    width: 100%;
+  }
+  .title-wrapper h1 {
+    margin: 0 0 20px;
+  }
   .wrapper {
     flex-direction: column;
   }
   .second-block {
     padding-top: 0;
+  }
+  .video-wrapper {
+    align-items: unset;
+  }
+  input {
+    width: 90%;
+  }
+  input[type="text"]::placeholder {
+    font-size: 16px;
+  }
+  .track-list {
+    font-size: 20px;
+  }
+  .description,
+  .tracks-wrapper-ext {
+    flex-wrap: wrap;
   }
 }

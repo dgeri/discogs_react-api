@@ -30,24 +30,37 @@ function Search() {
     sessionStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
-  return (
-    <div className="Search">
-      <Form />
-      {items.map((item) => (
-        <h1 className="search-item" key={item.id}>
-          <Link className="search-links" to={`/search/${item.id}`}>
-            {item.title} ({item.year})
-          </Link>
-        </h1>
-      ))}
-    </div>
-  );
+  if (items.length <= 0) {
+    return (
+      <div className="Search">
+        {" "}
+        <Form />
+        <div className="error-msg">no such releases :-( </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="Search">
+        <Form />
+        {items.map((item) => (
+          <h1 className="search-item" key={item.id}>
+            <Link className="search-links" to={`/search/${item.id}`}>
+              {item.title} ({item.year})
+            </Link>
+          </h1>
+        ))}
+      </div>
+    );
+  }
+
   function Form() {
     return (
-      <form className="form" onSubmit={fetchItems}>
-        <input type="text" name="artist" placeholder="search..." />
-        <button className="button-search"> </button>
-      </form>
+      <div>
+        <form className="form" onSubmit={fetchItems}>
+          <input type="text" name="artist" placeholder="explore releases from all over the world" />
+          <button className="button-search"> </button>
+        </form>
+      </div>
     );
   }
 }
